@@ -37,12 +37,41 @@ public class Test02 {
 
     //main() method
     public static void main(String[] args) {
-        Test02 t1 = new Test02();
 
         try{
-            int aRes = add(10,0);//correct values are passed no Exception
-            System.out.println("Adddition : "+aRes);
+            /* int aRes = add(10,20);//correct values are passed no Exception
+            System.out.println("Adddition : "+aRes); */
+
+            //calling add() method
+            int aRes = add(-10,20);
+            System.out.println("Addition : "+aRes);
+
         }catch(IllegalAccessException e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println();// one line gap
+
+        Test02 t1 = new Test02();
+
+        //calling sub() method 
+        t1.sub();
+
+        System.out.println();//one line gap
+
+        //calling mul() method 
+        int mRes = t1.mul(10,20);
+        System.out.println("Multiplication : "+mRes);
+
+        System.out.println();//one line gap
+
+        //calling div() method
+        try{
+            int rDiv = div(20,10);
+            System.out.println("Division : "+rDiv);
+        }catch(IllegalAccessException e){
+            System.out.println(e.getMessage());
+        }catch(ArithmeticException e){
             System.out.println(e.getMessage());
         }
     }
